@@ -1,77 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/estilo.css" rel="stylesheet" type="text/css">
-    <title>BipBop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/estilo.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
+    <div class="container">
 
-    <div class="cabecera">
-        <img id="logo" src="imagenes/BipBop.png" alt="Logo BipBop"/>
-        <img id="perfil" src="imagenes/user-circle-regular.svg" alt="perfil"/>
-        <nav>
-            <section>
-                <img id="lupa" src="imagenes/search-solid.svg" alt="lupa"/><input type="text" placeholder="Buscar en todas las categorías">
-            </section>
-            <ul>
-                <li>
-                    <figure>
-                        <img class="imagenNav" src="imagenes/mobile-alt-solid.svg" alt="moviles" />
-                        <figcaption>Móviles</figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <img class="imagenNav" src="imagenes/tablet-solid.svg" alt="tablets" />
-                        <figcaption>Tablets</figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <img class="imagenNav" src="imagenes/gamepad-solid.svg" alt="consolas" />
-                        <figcaption>Consolas</figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <img class="imagenNav" src="imagenes/tv-solid.svg" alt="televisores" />
-                        <figcaption>Televisores</figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <img class="imagenNav" src="imagenes/headphones-alt-solid.svg" alt="sonido" />
-                        <figcaption>Sonido</figcaption>
-                    </figure>
-                </li>
-            </ul>
-        </nav>
-    </div>
+        <img id="logo" src="imagenes/BipBop.png" alt="Logo BipBop" />
+        <img id="perfil" src="imagenes/user-circle-regular.svg" alt="perfil" />
 
-    <div class="cuerpo">
-        <h2>Productos destacados</h2>
-        <section class="productosDestacados">
-            
-                <figure>
-                    <img class="img_pd_1" src="imagenes/productos/iphone.jpg" alt="iphone" />
-                    <figcaption class="tituloProducto">iPhone</figcaption>
-                    <figcaption class="descripcionProducto">503 publicaciones</figcaption>
-                </figure>
-            
-            <div id="pd_2">
-                <figure>
-                    <img class="imagenNav" src="imagenes/tv-solid.svg" alt="televisores" />
-                    <figcaption>Televisores</figcaption>
-                </figure>
+        <div class="busqueda">
+            <img id="lupa" src="imagenes/search-solid.svg" alt="lupa" /><input type="text"
+                placeholder="Buscar en todas las categorías">
+            <div>
+
+                <nav>
+                    <ul>
+                        <li>
+                            <figure>
+                                <a href=""><img class="imagenNav" src="imagenes/mobile-alt-solid.svg"
+                                        alt="moviles" /></a>
+                                <figcaption>Móviles</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <a href=""><img class="imagenNav" src="imagenes/tablet-solid.svg" alt="tablets" /></a>
+                                <figcaption>Tablets</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <a href=""><img class="imagenNav" src="imagenes/gamepad-solid.svg" alt="consolas" /></a>
+                                <figcaption>Consolas</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <a href=""><img class="imagenNav" src="imagenes/tv-solid.svg" alt="televisores" /></a>
+                                <figcaption>Televisores</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <a href=""><img class="imagenNav" src="imagenes/headphones-alt-solid.svg"
+                                        alt="sonido" /></a>
+                                <figcaption>Sonido</figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <section>
+                    <article>
+
+                        <h2>Productos destacados</h2>
+
+                        <div class="filaProductos">
+                            <div class="pd">
+                                <figure>
+                                    <img id="img_pd_1" src="imagenes/productos/iphone.jpg" alt="iphone"
+                                        style="width: 100%;" />
+                                    <figcaption class="tituloProducto">iPhone</figcaption>
+                                    <figcaption class="descripcionProducto">503 publicaciones</figcaption>
+                                </figure>
+                            </div>
+                            <div class="pd">
+                                <figure>
+                                    <img id="img_pd_2" src="imagenes/productos/consolas.jpg" alt="consolas"
+                                        style="width: 100%;" />
+                                    <figcaption class="tituloProducto">Consolas</figcaption>
+                                    <figcaption class="descripcionProducto">823 publicaciones</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <h2>Para ver tus series y pelis favoritas</h2>
+
+                        <div class="filaProductos">
+                            <div class="pd">
+                                <figure>
+                                    <img id="img_pd_4" src="imagenes/productos/televisor.png" alt="televisores"
+                                        style="width: 100%;" />
+                                    <figcaption class="tituloProducto">Televisores</figcaption>
+                                    <figcaption class="descripcionProducto">250 publicaciones</figcaption>
+                                </figure>
+                            </div>
+                            <div class="pd">
+                                <figure>
+                                    <img id="img_pd_3" src="imagenes/productos/barra_de_sonido.jpg"
+                                        alt="barra_de_sonido" style="width: 100%;" />
+                                    <figcaption class="tituloProducto">Altavoces</figcaption>
+                                    <figcaption class="descripcionProducto">233 publicaciones</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+
+
+                <aside>Aside</aside>
+
+                <div class="pre_footer">
+                    <span style="color: pink;">Ciudades</span></br>
+                    Madrid, Barcelona, Valencia, Sevilla, Zaragoza, Málaga, Alicante, Bilbao, Valladolid, Móstoles,
+                        Alcalá de Henares, Gijón, A Coruña, Granada, Sabadell, Vigo, Getafe, Burgos, Leganés, Badalona,
+                        Palma de Mallorca, Murcia, Córdoba, Oviedo, Elche, Santander, Salamanca, L'Hospitalet de
+                        Llobregat, Girona, Tarragona, Pamplona, Almería, Donostia-San Sebastián, Las Palmas de Gran
+                        Canaria, ver todas las ciudades
+                </div>
+
+                <footer>
+                    <p>Vamos esos chavales de 2ºDAW</p>
+                </footer>
             </div>
-        </section>
-    </div>
-
-
 </body>
 
 </html>
