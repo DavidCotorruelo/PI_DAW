@@ -16,8 +16,6 @@ and open the template in the editor.
 
 </head>
 
-
-
 <body>
     <div class="container">
 
@@ -28,13 +26,12 @@ and open the template in the editor.
             <div>
                 <a href="#close" title="Close" class="close">X</a>
                 <h2>Iniciar Sesión</h2>
-                <input type="text" name="correo" id="is_correo" placeholder="Correo"></br>
+                <input type="text" name="correo" id="correo" placeholder="Correo"></br>
                 </br>
-                <input type="password" name="contrasenia" id="is_pass" placeholder="Contraseña"></br>
+                <input type="password" name="contrasenia" id="pass" placeholder="Contraseña"></br>
                 </br>
                 </br>
-                <a href="#openModal_2">Registrarse</a> | <button id="iniciarSesion" onclick="iniciarSesion()">Iniciar
-                    Sesión</button>
+                <a href="#openModal_2">Registrarse</a> | <button id="iniciarSesion">Iniciar Sesión</button>
             </div>
         </div>
 
@@ -43,25 +40,21 @@ and open the template in the editor.
             <div>
                 <a href="#close" title="Close" class="close">X</a>
                 <h2>Registrarse</h2>
-                <input type="text" name="correo" id="r_correo" placeholder="Correo"></br>
-                <label id="errorCorreo" style="visibility: hidden;"></label>
+                <input type="text" name="correo" id="correo" placeholder="Correo"></br>
                 </br>
-                <input type="password" name="contrasenia" id="r_pass" placeholder="Contraseña"></br>
-                <label id="errorPass" style="visibility: hidden;"></label>
+                <input type="password" name="contrasenia" id="pass" placeholder="Contraseña"></br>
                 </br>
-                <input type="password" name="contrasenia" id="confPass" placeholder="Confirmar contraseña"></br>
-                <label id="noCoincide" style="visibility: hidden;"></label>
+                <input type="password" name="contrasenia" id="pass" placeholder="Contraseña"></br>
                 </br>
                 </br>
-                <a href="#openModal">Iniciar sesión</a> | <button id="Registrarse"
-                    onclick="validarCampos()">Registrarse</button>
+                <a href="#openModal">Iniciar sesión</a> | <button id="Registrarse">Registrarse</button>
             </div>
         </div>
 
 
         <div class="busqueda">
             <img id="lupa" src="imagenes/search-solid.svg" alt="lupa" /><input type="text"
-                placeholder="Buscar en todas las categorías" />
+                placeholder="Buscar en todas las categorías">
             <div>
 
                 <nav>
@@ -175,69 +168,5 @@ and open the template in the editor.
                 </footer>
             </div>
 </body>
-
-<script>
-
-    function Mensaje(texto){
-        this.texto = texto;
-    }
-
-    function validarEmail() {
-        var res = true;
-
-        if (!document.getElementById("r_correo").value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-            this.texto = "El correo debe tener un formato válido,";
-            document.getElementById("errorCorreo").innerHTML = this.texto;
-            document.getElementById("errorCorreo").style.visibility = "visible";
-            document.getElementById("errorCorreo").style.color = "red";
-            res = false;
-        }else{
-            document.getElementById("errorCorreo").style.visibility = "hidden";
-        }
-
-        return res;
-
-    }
-
-    function validarContrasenia(){
-        var res = true;
-
-        var pass = document.getElementById("pass");
-        var passCheck = document.getElementById("confPass");
-
-        if(!document.getElementById("r_pass").value.match(/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{4,16}$/)){
-            this.texto = "La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula";
-            document.getElementById("errorPass").innerHTML = this.texto;
-            document.getElementById("errorPass").style.visibility = "visible";
-            document.getElementById("errorPass").style.color = "red";
-            res = false;
-        }else{
-            document.getElementById("errorPass").style.visibility = "hidden";
-        }
-
-        console.log(document.getElementById("r_pass").value);
-        console.log(document.getElementById("confPass").value);
-
-        if(document.getElementById("r_pass").value != document.getElementById("confPass").value) {
-            this.texto = "Las contraseñas deben coincidir";
-            document.getElementById("noCoincide").innerHTML = this.texto;
-            document.getElementById("noCoincide").style.visibility = "visible";
-            document.getElementById("noCoincide").style.color = "red";
-            res = false;
-        }else{
-            document.getElementById("noCoincide").style.visibility = "hidden";
-        }
-
-        return res;
-    }
-
-    function validarCampos(){
-        if(validarEmail() && validarContrasenia()){
-            alert("Usuario registrado correctamente");
-            document.getElementById("openModal_2").visibility = "hidden";
-        }
-    }
-
-</script>
 
 </html>
