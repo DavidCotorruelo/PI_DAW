@@ -86,6 +86,9 @@ nav ul li {
     margin:2px;
 }
 
+h2{
+    text-align: center;
+}
 
 .filaProductos::after{
     content: "";
@@ -103,6 +106,19 @@ nav ul li {
 
     background-color: white;
     border-radius: 5px;
+    
+}
+
+.producto{
+    float: left;
+    width: 40%;
+    margin-left: 6%;
+    margin-right: 15px;
+
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 5%;
+
     
 }
 
@@ -224,7 +240,103 @@ text-align: center;
 	border-radius: 12px;
 	
 }
-.close:hover { background: #c90303; }
+
+.close:hover { 
+    background: #c90303; 
+}
+
+.atributos div{
+    display: inline-block;
+    min-width: 6%;
+    margin-right: 10px;
+}
+
+.contenedor{
+    
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
+
+.contenedor img{
+    padding-right: 7px;
+}
+
+.contenedor label{
+    vertical-align: 3px;
+}
+
+.busqueda_prodSelec{
+    padding: 1em;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.productoSeleccionado{
+    background-color: white;
+    width: 75%;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.productoSeleccionado .img_perfil{
+    padding-left: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.productoSeleccionado label{
+    vertical-align: 30px;
+}
+
+.productoSeleccionado button{
+    margin-top: 5px;
+    margin-right: 10px;
+    float: right;
+    margin-left: 15px;
+    width: 12%;
+    border-radius: 5px;
+}
+
+.productoSeleccionado .like{
+    background-color: rgb(247, 151, 167);
+}
+
+.productoSeleccionado .chat{
+    background-color: rgb(117, 235, 127);
+}
+
+
+.productoSeleccionado .prodSelec_precio{
+    margin-left: 15px;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.productoSeleccionado .prodSelec_titulo{
+    margin-left: 15px;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.productoSeleccionado .descProducto, .mapa{
+    background-color: white;
+    width: 75%;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
 
 /* para 980px o menos */
 @media screen and (max-width:980px) {

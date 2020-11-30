@@ -60,43 +60,54 @@ and open the template in the editor.
         </div>
 
 
-        <div class="busqueda">
+        <div class="busqueda_prodSelec">
             <img id="lupa" src="imagenes/iconos/search-solid.svg" alt="lupa" /><input type="text"
                 placeholder="Buscar en todas las categorías" />
         </div>
-        <div class="atributos">
 
-            <div class="contenedor">
-                <img src="imagenes/iconos/mobile-alt-solid.svg" alt="moviles" width="20px" height="20px">
-                <label for="moviles">Móviles</label>
-            </div>
 
-            <div class="contenedor">
-                <img src="imagenes/iconos/euro-sign-solid.svg" alt="precio" width="20px" height="20px">
-                <label for="precio">Precio</label>
-            </div>
 
-            <div class="contenedor">
-                <img src="imagenes/iconos/certificate-solid.svg" alt="estado_del_producto" width="20px" height="20px">
-                <label for="estado_del_producto">Estado del producto</label>
-            </div>
-
-            <div class="contenedor">
-                <img src="imagenes/iconos/map-marker-alt-solid.svg" alt="ubicacion" width="20px" height="20px">
-                <label for="ubicacion">Ubicación</label>
-            </div>
-        </div>
-            
-
-        
         <section>
-            <article id="articulos">
+            <article>
 
-                
+                <div class="productoSeleccionado">
+                    <img class="img_perfil" src="imagenes/iconos/imagenPerfil.jpg" alt="Imagen de perfil" />
+                    <label>Nombre de usuario</label>
+
+                    <button class="chat"><img src="imagenes/iconos/comment-dots-regular.svg" alt="Chat" width="30px"
+                            height="30px"></button>
+                    <button class="like"><img src="imagenes/iconos/heart-regular.svg" alt="Like" width="30px"
+                            height="30px"></button>
+
+                    <img src="imagenes/productos/imgProducto.png" alt="Imagen del producto" style="width: 100%;">
+                    <p class="prodSelec_precio">10€</p>
+                    <p class="prodSelec_titulo">Nombre del producto</p>
+                    <div class="descProducto">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, velit modi tenetur optio officia
+                        quas ea. Sunt dolorem sequi quas quo aliquam optio animi culpa, aspernatur esse nemo nihil
+                        quaerat.
+                        Deserunt reiciendis repudiandae corrupti veniam, voluptate commodi. Incidunt, laborum. Dolores
+                        cumque similique magnam illo expedita sunt placeat quisquam ex sequi, consequuntur obcaecati
+                        veniam asperiores aperiam itaque doloremque quos! Aspernatur, vel.
+                        Ullam recusandae cumque quos animi voluptatem ea a id veritatis nesciunt. Nam repellendus
+                        provident velit earum sapiente quod dolores veniam, perferendis blanditiis ratione dolor nemo
+                        reprehenderit consequatur cupiditate eligendi maiores?
+                    </div>
+
+                    <p class="prodSelec_titulo">Localización</p>
+
+                    <div class="mapa">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.3751788041127!2d-6.010107384920343!3d37.40460617982857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126b8baf5b1a7f%3A0x7512042c1c529ac3!2sCartuja%20Center%20CITE!5e0!3m2!1ses!2ses!4v1606735771136!5m2!1ses!2ses"
+                            width="100%" height="450px" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+
+                </div>
+
             </article>
         </section>
 
-        <!--<aside>Aside</aside>-->
 
         <div class="pre_footer">
             <span style="color: pink;">Ciudades</span></br>
@@ -109,9 +120,11 @@ and open the template in the editor.
 
         <footer>
 
-            <a href=""><img class="aplicacion" src="imagenes/iconos/apple-brands.svg" alt="Apple store" /></a><label>Apple
+            <a href=""><img class="aplicacion" src="imagenes/iconos/apple-brands.svg"
+                    alt="Apple store" /></a><label>Apple
                 store</label>
-            <a href=""><img class="aplicacion" src="imagenes/iconos/android-brands.svg" alt="Google play" /></a><label>Google
+            <a href=""><img class="aplicacion" src="imagenes/iconos/android-brands.svg"
+                    alt="Google play" /></a><label>Google
                 play</label>
 
 
@@ -183,93 +196,6 @@ and open the template in the editor.
             alert("Usuario registrado correctamente");
             document.getElementById("openModal_2").style.display = "none";
         }
-    }
-
-    function arrayProductos(){
-        var producto = new Array(3);
-        producto[0] = "imagenes/productos/imgProducto.png";
-        producto[1] = "Producto";
-        producto[2] = "Descripción del producto";
-
-        var filaProductos = new Array(6);
-        filaProductos[0] = producto;
-        filaProductos[1] = producto;
-        filaProductos[2] = producto;
-        filaProductos[3] = producto;
-        filaProductos[4] = producto;
-        filaProductos[5] = producto;
-
-        var article = document.getElementById("articulos");
-
-        var div = document.createElement("div");
-        var div_att = document.createAttribute("class");
-        div_att.value = "filaProductos";
-        div.setAttributeNode(div_att);
-
-        for(i=0; i< filaProductos.length; i++){
-            console.log("vuelta " + i);
-            var pd = document.createElement("div");
-            var pd_att = document.createAttribute("class");
-            pd_att.value = "producto";
-            pd.setAttributeNode(pd_att);
-
-            var link = document.createElement("a");
-            link.href = filaProductos[i][1] + ".html";
-
-            var figure = document.createElement("figure");
-            
-            var img = document.createElement("img");
-            var img_att = document.createAttribute("id");
-            img_att.value = "producto_" + i;
-            img.setAttributeNode(img_att);
-
-            img.src = filaProductos[i][0];
-            img.style = "width: 100%;";
-
-            link.appendChild(img);
-
-            var titulo = document.createElement("figcaption");
-            var titulo_att = document.createAttribute("class");
-            titulo_att.value = "tituloProducto";
-            titulo.setAttributeNode(titulo_att);
-            var texto_titulo = document.createTextNode(filaProductos[i][1]);
-
-            titulo.appendChild(texto_titulo);
-
-            var desc = document.createElement("figcaption");
-            var desc_att = document.createAttribute("class");
-            desc_att.value = "descripcionProducto";
-            desc.setAttributeNode(desc_att);
-            var desc_titulo = document.createTextNode(filaProductos[i][2]);
-
-            desc.appendChild(desc_titulo);
-
-            figure.appendChild(link);
-            figure.appendChild(titulo);
-            figure.appendChild(desc);
-            
-
-            pd.appendChild(figure);
-
-            div.appendChild(pd);
-
-            /*var img = document.write("<img id=" + "producto_" + i + "src=\"" + filaProductos[i][0] + "\" style=\"width: 100%;\" />");
-            var titulo = document.write("<figcaption class=\"tituloProducto\">" + filaProductos[i][1] + "</figcaption>");
-            var descrp = document.write("<figcaption class=\"tituloProducto\">" + filaProductos[i][2] + "</figcaption>");
-
-            document.write("</figure>");
-            document.write("</div>");*/
-            
-        }
-
-        article.appendChild(div);
-
-                    
-
-    }
-
-    window.onload = function(){
-        arrayProductos();
     }
 
 </script>
