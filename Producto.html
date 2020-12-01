@@ -44,13 +44,13 @@ and open the template in the editor.
             <div>
                 <a href="#close" title="Close" class="close">X</a>
                 <h2>Registrarse</h2>
-                <input type="text" name="correo" id="r_correo" placeholder="Correo"></br>
+                <input type="text" name="correo" id="r_correo" placeholder="Correo" onkeyup="validarEmail()"></br>
                 <label id="errorCorreo" style="visibility: hidden;"></label>
                 </br>
-                <input type="password" name="contrasenia" id="r_pass" placeholder="Contraseña"></br>
+                <input type="password" name="contrasenia" id="r_pass" placeholder="Contraseña" onkeyup="validarContrasenia()"></br>
                 <label id="errorPass" style="visibility: hidden;"></label>
                 </br>
-                <input type="password" name="contrasenia" id="confPass" placeholder="Confirmar contraseña"></br>
+                <input type="password" name="contrasenia" id="confPass" placeholder="Confirmar contraseña" onkeyup="confirmarContrasenia()"></br>
                 <label id="noCoincide" style="visibility: hidden;"></label>
                 </br>
                 </br>
@@ -159,40 +159,42 @@ and open the template in the editor.
 
     }
 
-    function validarContrasenia() {
+    function validarContrasenia(){
         var res = true;
 
-        var pass = document.getElementById("pass");
-        var passCheck = document.getElementById("confPass");
-
-        if (!document.getElementById("r_pass").value.match(/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{4,16}$/)) {
+        if(!document.getElementById("r_pass").value.match(/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{4,16}$/)){
             this.texto = "La contraseña debe tener al entre 4 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula";
             document.getElementById("errorPass").innerHTML = this.texto;
             document.getElementById("errorPass").style.visibility = "visible";
             document.getElementById("errorPass").style.color = "red";
             res = false;
-        } else {
+        }else{
             document.getElementById("errorPass").style.visibility = "hidden";
-        }
-
-        console.log(document.getElementById("r_pass").value);
-        console.log(document.getElementById("confPass").value);
-
-        if (document.getElementById("r_pass").value != document.getElementById("confPass").value) {
-            this.texto = "Las contraseñas deben coincidir";
-            document.getElementById("noCoincide").innerHTML = this.texto;
-            document.getElementById("noCoincide").style.visibility = "visible";
-            document.getElementById("noCoincide").style.color = "red";
-            res = false;
-        } else {
-            document.getElementById("noCoincide").style.visibility = "hidden";
         }
 
         return res;
     }
 
-    function validarCampos() {
-        if (validarEmail() && validarContrasenia()) {
+    function confirmarContrasenia(){
+
+        var res = true;
+
+        if(document.getElementById("r_pass").value != document.getElementById("confPass").value) {
+            this.texto = "Las contraseñas deben coincidir";
+            document.getElementById("noCoincide").innerHTML = this.texto;
+            document.getElementById("noCoincide").style.visibility = "visible";
+            document.getElementById("noCoincide").style.color = "red";
+            res = false;
+        }else{
+            document.getElementById("noCoincide").style.visibility = "hidden";
+        }
+
+        return res;
+
+    }
+
+    function validarCampos(){
+        if(validarEmail() && validarContrasenia() && confirmarContrasenia()){
             alert("Usuario registrado correctamente");
             document.getElementById("openModal_2").style.display = "none";
         }
